@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+Const mongoose = require("mongoose");
 
 const pujaSchema = new mongoose.Schema(
   {
@@ -7,7 +7,6 @@ const pujaSchema = new mongoose.Schema(
     image: { type: String, required: true }, // Store image URL
     
   },
-  { timestamps: true }
 );
 
 const Puja = mongoose.model("Puja", pujaSchema);
