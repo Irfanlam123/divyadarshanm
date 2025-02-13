@@ -1,3 +1,13 @@
+# Ignore node_modules
+node_modules/
 
-node_modules
+# Ignore environment files
+.env
 
+# Ignore build folders
+dist/
+build/
+
+# Ignore specific folder
+uploads/
+logs/
