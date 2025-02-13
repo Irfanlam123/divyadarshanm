@@ -1,4 +1,4 @@
-const Puja = require("../models/pujaModel");
+const Puja = require("../models/puja");
 
 // Get all Pujas
 exports.getAllPujas = async (req, res) => {

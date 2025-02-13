@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 const pujaSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
-    description: { type: String, required: true },
-    image: { type: String, required: true }, // Store image URL
+    name: { type: String },
+    description: { type: String  },
+    image: { type: String }, // Store image URL
     
   },
 );
