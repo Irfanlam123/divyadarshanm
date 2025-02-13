@@ -1,4 +1,4 @@
-Const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 const pujaSchema = new mongoose.Schema(
   {
