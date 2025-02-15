@@ -1,6 +1,6 @@
 const Puja = require("../models/puja");
 
-// Get all Pujas
+// ✅ Get all Pujas
 exports.getAllPujas = async (req, res) => {
   try {
     const pujas = await Puja.find();
@@ -10,7 +10,7 @@ exports.getAllPujas = async (req, res) => {
   }
 };
 
-// Get a single Puja by ID
+// ✅ Get a single Puja by ID
 exports.getPujaById = async (req, res) => {
   try {
     const puja = await Puja.findById(req.params.id);
@@ -21,11 +21,11 @@ exports.getPujaById = async (req, res) => {
   }
 };
 
-// Create a new Puja
+// ✅ Create a new Puja
 exports.createPuja = async (req, res) => {
   try {
-    const { name, description, image } = req.body;
-    const newPuja = new Puja({ name, description, image });
+    const { name, description, image, price } = req.body;
+    const newPuja = new Puja({ name, description, image, price });
     await newPuja.save();
     res.status(201).json(newPuja);
   } catch (error) {
@@ -33,7 +33,7 @@ exports.createPuja = async (req, res) => {
   }
 };
 
-// Update Puja
+// ✅ Update Puja
 exports.updatePuja = async (req, res) => {
   try {
     const updatedPuja = await Puja.findByIdAndUpdate(req.params.id, req.body, {
@@ -48,7 +48,7 @@ exports.updatePuja = async (req, res) => {
   }
 };
 
-// Delete Puja
+// ✅ Delete Puja
 exports.deletePuja = async (req, res) => {
   try {
     const deletedPuja = await Puja.findByIdAndDelete(req.params.id);
