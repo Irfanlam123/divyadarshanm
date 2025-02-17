@@ -24,8 +24,23 @@ exports.getPujaById = async (req, res) => {
 // ✅ Create a new Puja
 exports.createPuja = async (req, res) => {
   try {
-    const { name, description, image, price } = req.body;
-    const newPuja = new Puja({ name, description, image, price });
+    const { name, description, image, price, location, date } = req.body;
+
+    // Validate required fields
+    if (!name || !description || !price || !location || !date) {
+      return res
+        .status(400)
+        .json({ message: "Please fill in all required fields" });
+    }
+
+    const newPuja = new Puja({
+      name,
+      description,
+      image,
+      price,
+      location,
+      date,
+    });
     await newPuja.save();
     res.status(201).json(newPuja);
   } catch (error) {
